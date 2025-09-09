@@ -79,20 +79,6 @@ https://cocogzz1.github.io/ing_web/
 ### Discapacidades Motoras
 - **Navegación por Teclado**: Todas las funciones accesibles sin mouse
 - **Objetivos Táctiles**: Botones de mínimo 44x44px
-- **Tiempo Extendido**: Sin límites de tiempo para completar acciones
-
-### Discapacidades Cognitivas
-- **Interfaz Clara**: Diseño simple e intuitivo
-- **Mensajes de Error**: Explicaciones claras y sugerencias
-- **Ayuda Contextual**: Texto de ayuda para cada función
-
-## Atajos de Teclado
-
-- **Ctrl/Cmd + P**: Procesar datos CSV
-- **Ctrl/Cmd + G**: Generar gráfico
-- **Ctrl/Cmd + E**: Exportar gráfico
-- **Ctrl/Cmd + R**: Limpiar todos los datos
-- **Ctrl/Cmd + T**: Cambiar tema (claro/oscuro)
 
 ##  Diseño Responsive
 
@@ -169,20 +155,7 @@ Mouse,250,Febrero,Este
 4. **Inventario**: Seguimiento de stock y movimientos
 5. **Métricas de Rendimiento**: KPIs y indicadores de desempeño
 
-##  Privacidad y Seguridad
 
-- **Procesamiento Local**: Todos los datos se procesan en su navegador
-- **Sin Servidor**: No se envían datos a servidores externos
-- **Sin Cookies**: No se almacenan datos personales
-- **Código Abierto**: Puede revisar todo el código fuente
-
-##  Próximas Mejoras
-
-- [ ] Soporte para más formatos (Excel, JSON)
-- [ ] Gráficos de dispersión y área
-- [ ] Exportación a PDF
-- [ ] Plantillas predefinidas
-- [ ] Modo sin conexión (PWA)
 
 
 ---
