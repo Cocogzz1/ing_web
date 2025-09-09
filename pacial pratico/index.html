@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Herramienta de Inteligencia de Negocios</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Skip to main content link for screen readers -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
+    <header role="banner">
+        <div class="header-container">
+            <h1>Mini Herramienta de Inteligencia de Negocios</h1>
+            <div class="header-controls">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar a modo oscuro">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <!-- CSV Input Section -->
+        <section class="input-section" aria-labelledby="input-heading">
+            <h2 id="input-heading">Entrada de Datos CSV</h2>
+            
+            <div class="input-methods">
+                <div class="input-method">
+                    <h3>Pegar Datos CSV</h3>
+                    <label for="csv-input" class="visually-hidden">Área de texto para datos CSV</label>
+                    <textarea 
+                        id="csv-input" 
+                        placeholder="Pegue sus datos CSV aquí... Ejemplo:&#10;Producto,Ventas,Mes&#10;Laptop,1500,Enero&#10;Mouse,300,Enero&#10;Teclado,450,Enero"
+                        aria-describedby="csv-help"
+                        rows="8">
+                    </textarea>
+                    <div id="csv-help" class="help-text">
+                        Formato esperado: Primera fila con encabezados, datos separados por comas
+                    </div>
+                </div>
+                
+                <div class="input-method">
+                    <h3>Cargar Archivo CSV</h3>
+                    <div class="file-upload-container">
+                        <input type="file" id="csv-file" accept=".csv" aria-describedby="file-help">
+                        <label for="csv-file" class="file-upload-label">
+                            <span class="file-icon">📁</span>
+                            Seleccionar archivo CSV
+                        </label>
+                    </div>
+                    <div id="file-help" class="help-text">
+                        Seleccione un archivo CSV desde su computadora
+                    </div>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="parse-btn" class="primary-btn">
+                    <span class="btn-icon">⚡</span>
+                    Procesar Datos
+                </button>
+                <button id="clear-btn" class="secondary-btn">
+                    <span class="btn-icon">🗑️</span>
+                    Limpiar
+                </button>
+            </div>
+            
+            <!-- Error/Warning Messages -->
+            <div id="messages" class="messages" role="alert" aria-live="polite"></div>
+        </section>
+
+        <!-- Data Table Section -->
+        <section class="table-section" aria-labelledby="table-heading">
+            <h2 id="table-heading">Datos Estructurados</h2>
+            
+            <div class="table-controls">
+                <div class="filter-container">
+                    <label for="column-filter">Filtrar por columna:</label>
+                    <select id="column-filter" aria-describedby="filter-help">
+                        <option value="">Todas las columnas</option>
+                    </select>
+                    <input type="text" id="filter-input" placeholder="Valor a filtrar..." aria-describedby="filter-help">
+                    <div id="filter-help" class="help-text">
+                        Seleccione una columna y escriba un valor para filtrar los datos
+                    </div>
+                </div>
+            </div>
+            
+            <div class="table-container">
+                <table id="data-table" class="data-table" role="table" aria-describedby="table-summary">
+                    <caption id="table-summary">Tabla de datos CSV procesados</caption>
+                    <thead></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Chart Configuration Section -->
+        <section class="chart-config-section" aria-labelledby="chart-config-heading">
+            <h2 id="chart-config-heading">Configuración del Gráfico</h2>
+            
+            <div class="chart-controls">
+                <div class="control-group">
+                    <label for="x-axis-select">Eje X (Etiquetas):</label>
+                    <select id="x-axis-select" aria-describedby="x-axis-help">
+                        <option value="">Seleccionar columna</option>
+                    </select>
+                    <div id="x-axis-help" class="help-text">Columna para las etiquetas del eje horizontal</div>
+                </div>
+                
+                <div class="control-group">
+                    <label for="y-axis-select">Eje Y (Valores):</label>
+                    <select id="y-axis-select" aria-describedby="y-axis-help">
+                        <option value="">Seleccionar columna</option>
+                    </select>
+                    <div id="y-axis-help" class="help-text">Columna para los valores numéricos</div>
+                </div>
+                
+                <div class="control-group">
+                    <label for="chart-type">Tipo de Gráfico:</label>
+                    <select id="chart-type" aria-describedby="chart-type-help">
+                        <option value="bar">Barras Verticales</option>
+                        <option value="horizontalBar">Barras Horizontales</option>
+                        <option value="line">Líneas</option>
+                        <option value="pie">Circular</option>
+                        <option value="doughnut">Dona</option>
+                    </select>
+                    <div id="chart-type-help" class="help-text">Seleccione el tipo de visualización</div>
+                </div>
+                
+                <div class="control-group">
+                    <label for="chart-color">Color del Gráfico:</label>
+                    <input type="color" id="chart-color" value="#3498db" aria-describedby="color-help">
+                    <div id="color-help" class="help-text">Color principal para el gráfico</div>
+                </div>
+            </div>
+            
+            <div class="chart-actions">
+                <button id="generate-chart-btn" class="primary-btn">
+                    <span class="btn-icon">📊</span>
+                    Generar Gráfico
+                </button>
+                <button id="export-chart-btn" class="secondary-btn" disabled>
+                    <span class="btn-icon">💾</span>
+                    Exportar como PNG
+                </button>
+            </div>
+        </section>
+
+        <!-- Chart Display Section -->
+        <section class="chart-section" aria-labelledby="chart-heading">
+            <h2 id="chart-heading">Visualización de Datos</h2>
+            <div class="chart-container">
+                <canvas id="data-chart" role="img" aria-label="Gráfico de datos CSV"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <p>Mini Herramienta de BI - Cumple con estándares WCAG 2.1 AA</p>
+            <p>Accesible para usuarios con discapacidades visuales, motoras y cognitivas</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
