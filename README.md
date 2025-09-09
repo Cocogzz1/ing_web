@@ -1,4 +1,4 @@
-# Mini Herramienta de Inteligencia de Negocios (BI)
+# Mini Herramienta de Inteligencia de Negocios -(Parcial Pratico)
 
 Una aplicación web de una sola página (SPA) que funciona como una herramienta básica de inteligencia de negocios, similar a funciones de Excel. Permite procesar datos CSV, visualizarlos en tablas interactivas y generar gráficos configurables.
 
