@@ -1,6 +1,8 @@
 # Mini Herramienta de Inteligencia de Negocios -(Parcial Pratico)
 
 Una aplicación web de una sola página (SPA) que funciona como una herramienta básica de inteligencia de negocios, similar a funciones de Excel. Permite procesar datos CSV, visualizarlos en tablas interactivas y generar gráficos configurables.
+link
+https://cocogzz1.github.io/ing_web/ 
 
 ##  Características Principales
 
@@ -181,5 +183,6 @@ Mouse,250,Febrero,Este
 - [ ] Exportación a PDF
 - [ ] Plantillas predefinidas
 - [ ] Modo sin conexión (PWA)
+
 
 ---
