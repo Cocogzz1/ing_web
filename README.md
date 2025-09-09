@@ -109,6 +109,7 @@ Una aplicación web de una sola página (SPA) que funciona como una herramienta 
 
 ```
 /
+|-PArcial Pratico
 ├── index.html          # Estructura principal HTML
 ├── styles.css          # Estilos CSS con variables y responsive
 ├── script.js           # Lógica JavaScript de la aplicación
