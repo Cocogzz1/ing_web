@@ -11,7 +11,7 @@ Una aplicación web de una sola página (SPA) que funciona como una herramienta 
 - **Exportación**: Descargue gráficos como imágenes PNG
 - **Detección de Errores**: Validación automática de formato CSV
 
-### 🎨 Interfaz y Experiencia
+###  Interfaz y Experiencia
 - **Diseño Responsive**: Funciona en dispositivos móviles, tablets y escritorio
 - **Modo Oscuro**: Alternancia entre tema claro y oscuro
 - **Interfaz Intuitiva**: Diseño moderno con iconos y ayudas visuales
